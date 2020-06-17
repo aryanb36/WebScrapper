@@ -1,4 +1,3 @@
-#%%
 import requests
 import re
 from bs4 import BeautifulSoup
@@ -15,19 +14,19 @@ b = new_soup.findAll("h1")
 
 for i in b:
     y=i.text
-    res1 = "".join(re.split("[^a-zA-Z]*", y))
-    l1.append(res1)
+    fin2 = "".join(re.split("[^a-zA-Z]*", y))
+    l1.append(fin2)
     
 d={}
 c = new_soup.findAll("div", {"class":"maincounter-number"})
-j=1
+inc=1
 
 for i in c:
         
     z=i.text
-    res = str(re.sub("\D", "", z))
-    d[l1[j]]=res
-    j+=1
+    fin3 = str(re.sub("\D", "", z))
+    d[l1[inc]]=fin3
+    inc+=1
     
 print(l1[0],"Cases :")    
 for x, y in d.items():
@@ -51,7 +50,3 @@ for i in a:
 print("\nWorldwide Cases :")
 for x, y in d.items():
     print(x,":", y)
-    
-
-
-#%%
